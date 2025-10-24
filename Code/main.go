@@ -1,20 +1,35 @@
-package main
+package main 
 
 import (
-	"log"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 )
 
+const DEBUG = true
+
 func main() {
+	// This code is just a start and probably will change
+	app := app.New()
+	window := app.NewWindow("TextForge")
+	window.Resize(fyne.NewSize(800, 600))
+
+	window.SetMainMenu(GenerateMenu());
+
+	middle := widget.NewLabel("middle")
+	
+	// Use the center layout to center widgets
+	mainLayout := container.NewBorder(nil, nil, nil, nil, container.NewCenter(middle))
+	window.SetContent(mainLayout)
+
+	window.ShowAndRun()
+
+
+	/*
 	a := app.New()
 	w := a.NewWindow("TextForge")
-
 	w.Resize(fyne.NewSize(800, 600))
-
 	menuItemNew := fyne.NewMenuItem("New", func() {
 		log.Println("New menu item selected!")
 	})
@@ -42,4 +57,5 @@ func main() {
 	))
 
 	w.ShowAndRun()
+	*/
 }
