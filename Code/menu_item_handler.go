@@ -16,8 +16,8 @@ type MenuItemHandler struct {
 /*
 Creates a new MenuItemHandler
 */
-func NewMenuItemHandler(label string, action func()) MenuItemHandler {
-	return MenuItemHandler {
+func NewMenuItemHandler(label string, action func()) *MenuItemHandler {
+	return &MenuItemHandler {
 		label: label,
 		action: action,
 	}
@@ -27,5 +27,5 @@ func NewMenuItemHandler(label string, action func()) MenuItemHandler {
 Converts the MenuItemHandler into a *fyne.MenuItem
 */
 func (mIHandler *MenuItemHandler) GenerateMenuItem() *fyne.MenuItem{
-	return fyne.NewMenuItem(mIHandler.label, mIHandler.action);
+	return fyne.NewMenuItem(mIHandler.label, mIHandler.action)
 }

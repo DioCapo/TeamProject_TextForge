@@ -21,8 +21,8 @@ type MenuHandler struct {
 /*
 Creates a new MenuHandler with the provided label and number of menuItems
 */
-func NewMenuHandler(label string, numMenuItems int) MenuHandler {
-	return MenuHandler{
+func NewMenuHandler(label string, numMenuItems int) *MenuHandler {
+	return &MenuHandler{
 		label: label,
 		menuItems: make([]*fyne.MenuItem, numMenuItems),
 		numMenuItems: numMenuItems - 1,

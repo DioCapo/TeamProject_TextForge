@@ -6,7 +6,9 @@ import (
 )
 
 /*
-Keeps the code for generating the main menu out of main
+Generates the main menu
+
+This exists for keeping the code for generating the main menu out of main
 */
 func GenerateMenu() *fyne.MainMenu {
 	// Generate file menu

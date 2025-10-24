@@ -4,7 +4,6 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/widget"
 )
 
 const DEBUG = true
@@ -17,10 +16,10 @@ func main() {
 
 	window.SetMainMenu(GenerateMenu());
 
-	middle := widget.NewLabel("middle")
+	middle := GenerateMainEditorComponent()
 	
 	// Use the center layout to center widgets
-	mainLayout := container.NewBorder(nil, nil, nil, nil, container.NewCenter(middle))
+	mainLayout := container.NewBorder(nil, nil, nil, nil, middle)
 	window.SetContent(mainLayout)
 
 	window.ShowAndRun()
